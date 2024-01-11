@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
-
+    compileSdk 34
+    namespace "com.jasonernst.wifi_aware_test"
     defaultConfig {
-        applicationId "com.example.wifi_aware_test"
+        applicationId "com.jasonernst.wifi_aware_test"
         minSdk 29
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 

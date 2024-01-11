@@ -1,4 +1,4 @@
-package com.example.wifi_aware_test
+package com.jasonernst.wifi_aware_test
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

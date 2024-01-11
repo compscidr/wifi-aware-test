@@ -1,5 +1,6 @@
-package com.example.wifi_aware_test
+package com.jasonernst.wifi_aware_test
 
+import android.Manifest
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -7,34 +8,22 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.PERMISSION_GRANTED
-import android.icu.util.Output
 import android.net.*
 import android.net.wifi.aware.*
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.wifi_aware_test.databinding.ActivityMainBinding
 import logcat.AndroidLogcatLogger
 import logcat.LogPriority
 import logcat.logcat
 import java.io.BufferedInputStream
-import java.io.BufferedReader
 import java.io.InputStream
 import java.io.OutputStream
 import java.lang.Exception
 import java.net.ServerSocket
-import java.net.Socket
 
 class MainActivity : AppCompatActivity() {
 
@@ -162,6 +151,23 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // use main thread if null - probably change this
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                ACCESS_FINE_LOCATION
+            ) != PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.NEARBY_WIFI_DEVICES
+            ) != PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
         wifiAwareSession?.publish(config, publishCallback, null)
     }
 
@@ -191,6 +197,23 @@ class MainActivity : AppCompatActivity() {
 
         }
         // use main thread if null - probably change this
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                ACCESS_FINE_LOCATION
+            ) != PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.NEARBY_WIFI_DEVICES
+            ) != PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
         wifiAwareSession?.subscribe(config, subscribeCallback, null)
     }
 

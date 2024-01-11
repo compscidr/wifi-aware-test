@@ -1,4 +1,4 @@
-package com.example.wifi_aware_test
+package com.jasonernst.wifi_aware_test
 
 import org.junit.Test
 
