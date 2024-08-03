@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "wifi-aware-test"
-include ':app'
+include(":app")
