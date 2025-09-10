@@ -9,7 +9,7 @@ espressoCore = "3.7.0"
 kotlin = "2.2.20"
 logcat = "0.4"
 material = "1.13.0"
-navigationFragmentKtx = "2.9.3"
+navigationFragmentKtx = "2.9.4"
 
 [libraries]
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
