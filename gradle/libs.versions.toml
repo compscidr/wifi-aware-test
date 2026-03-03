@@ -25,4 +25,3 @@ navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
