@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
     namespace = "com.jasonernst.wifi_aware_test"
     defaultConfig {
         applicationId = "com.jasonernst.wifi_aware_test"
